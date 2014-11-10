@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @listing.image_url %>
+
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
   <div class="thumbnail">
-    
+    <%= image_tag @listing.image_url(:medium)%>
     </div>
     </div>
+
   <div class=".col-md-4">
     <h3><%= @listing.name %></h3>
-    <p><%= number_to_currency(@listing.price) %></p>
- <p><%= @listing.description %></p>
+    <h3><%= number_to_currency(@listing.price) %></h3>
+ <p>Description:<%= @listing.description %></p>
   </div>
 </div>
 
