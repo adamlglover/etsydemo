@@ -1,7 +1,13 @@
 class PagesController < ApplicationController
-  def about
+  def View
   end
 
-  def contact
+  def Create
+  end
+
+  def History
+  end
+
+  def About
   end
 end
