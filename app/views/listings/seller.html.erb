@@ -1,7 +1,8 @@
 <h1>Manage Listings</h1>
 <div class="well well-sm">
-<h5> Hey <%= current_user.name %>! Here you can view and make changes to all of your listings.</h5>
+<h5> Hey <%=current_user.name%>! Here you can view and make changes to all of your listings.</h5>
 </div>
+
 <div class="row">
    <% @listings.each do |listing| %>
   <div class="col-md-3">
@@ -20,7 +21,7 @@
      </button>
     <button type="button" class="btn btn-default btn-sm">
   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-         <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>  
+      <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %>  
      </button>
  
      <% end %>
