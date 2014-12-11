@@ -6,7 +6,7 @@
   
    <div class="caption">
      <%= link_to image_tag(listing.image_url(:thumb)), listing %>
-     <h3><%= listing.name %></h3>
+     <h4><%= listing.name %></h4>
      <p><%= number_to_currency(listing.price) %></p>
      <p><%= listing.user.name %></p>
      <% if user_signed_in? && (current_user == listing.user) %>   
