@@ -4,11 +4,15 @@
   <div class="col-sm-3">
  <div class="thumbnail">
   
-   <div class="caption">
+   <div class="row">
      <%= link_to image_tag(listing.image_url(:thumb)), listing %>
-     <h4><%= listing.name %></h4>
-     <p><%= number_to_currency(listing.price) %></p>
-     <p><%= listing.user.name %></p>
+     <hr style="margin-top:8px;margin-bottom:5px;"> 
+     <div class="col-sm-8"><%= listing.name %></div>
+     <div class="col-sm-8"><%= listing.user.name %></div>
+     <div class="col-sm-4"><%= number_to_currency(listing.price) %></div>
+        
+   
+     
      <% if user_signed_in? && (current_user == listing.user) %>   
     
      <% end %>
