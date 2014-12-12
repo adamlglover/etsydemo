@@ -13,7 +13,7 @@
   </tr>
   <% @listings.each do |listing| %>
   <tr>
-  <td><%= link_to image_tag(listing.image_url(:thumb)), listing %></td>
+  <td><%= image_tag listing.image_url(:thumb) %></td>
     <td><%= listing.name %></td>
   <td><%= listing.description %></td>
   <td><%= number_to_currency(listing.price) %></td>
