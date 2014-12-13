@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit]
   before_action :authenticate_user!
   
   def sales
@@ -28,9 +28,7 @@ class OrdersController < ApplicationController
     @listing = Listing.find(params[:listing_id])
   end
 
-  # GET /orders/1/edit
-  def edit
-  end
+ 
 
   # POST /orders
   # POST /orders.json
