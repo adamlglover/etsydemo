@@ -2,17 +2,18 @@
 <div class="well well-sm">
 <h5> Login to create your own listings.</h5>
 </div>
+
 <div class="row">
    <% @listings.each do |listing| %>
   <div class="col-sm-3">
- <div class="thumbnail">
-  
+ 
+   <%= link_to image_tag(listing.image_url(:thumb)), listing %>
    <div class="row">
-     <%= link_to image_tag(listing.image_url(:thumb)), listing %>
-     <hr style="margin-top:8px;margin-bottom:5px;"> 
-     <div class="col-sm-8"><%= listing.name %></div>
-     <div class="col-sm-8"><%= listing.user.name %></div>
-     <div class="col-sm-4"><%= number_to_currency(listing.price) %></div>
+     
+     
+     <div class="col-md-8"><%= listing.name %></div>
+     <div class="col-md-6"><%= listing.user.name %></div>
+     <div class="col-md-6"><%= number_to_currency(listing.price) %></div>
         
    
      
@@ -21,7 +22,7 @@
      <% end %>
    </div>
     </div>
-  </div>
+  
   <% end %>
   </div>   
 
