@@ -1,20 +1,22 @@
 <h1>Listings</h1>
-<div class="well well-sm">
-<h5> Login to create your own listings.</h5>
+<div class="jumbotron">
+  <h1>Welcome to my site</h1>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
 
 <div class="row">
    <% @listings.each do |listing| %>
   <div class="col-sm-3">
- 
+   <div class="thumbnail">
+    <div class="thumbnail">
    <%= link_to image_tag(listing.image_url(:thumb)), listing %>
+   </div>
    <div class="row">
-     
-     
-     <div class="col-md-8"><%= listing.name %></div>
-     <div class="col-md-6"><%= listing.user.name %></div>
-     <div class="col-md-6"><%= number_to_currency(listing.price) %></div>
-        
+  
+     <div class="col-md-12"><%= link_to listing.name, listing %></div>
+     <div class="col-md-8"><%= listing.user.name %></div>
+     <div class="col-md-4"><%= number_to_currency(listing.price) %></div>
+     </div>
    
      
      <% if user_signed_in? && (current_user == listing.user) %>   
