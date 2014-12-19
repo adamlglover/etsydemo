@@ -4,6 +4,7 @@
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
 
+
 <div class="row">
    <% @listings.each do |listing| %>
   <div class="col-sm-3">
@@ -14,18 +15,28 @@
    <div class="row">
   
      <div class="col-md-12"><%= link_to listing.name, listing %></div>
-     <div class="col-md-8"><%= listing.user.name %></div>
+    
      <div class="col-md-4"><%= number_to_currency(listing.price) %></div>
      </div>
-   
+     
+     
+    
+
+     
      
      <% if user_signed_in? && (current_user == listing.user) %>   
     
      <% end %>
    </div>
     </div>
-  
+ 
   <% end %>
   </div>   
 
 
+ <%= form_tag import_listings_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
+   
+  <% end %>  
+  

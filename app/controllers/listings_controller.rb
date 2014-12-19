@@ -65,7 +65,13 @@ class ListingsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def import
+  Listing.import(params[:file])
+  redirect_to listings_path, notice: "All good"
+  end
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing

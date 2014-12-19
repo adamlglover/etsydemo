@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+      resources :listings do
+    collection { post :import }
+  end
   resources :orders
 
   devise_for :users
