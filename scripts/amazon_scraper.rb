@@ -8,6 +8,10 @@ page = Nokogiri::HTML(open(url))
 
 #url = "http://www.amazon.com/s/ref=sr_pg_3?rh=i%3Aaps%2Ck%3Ayugioh+trading+cards&page=1#{i+1}"
 #page = Nokogiri::HTML(open(url))
+image = []
+page.css('div.a-column.a-span12.a-text-center').each do |line|
+  image << line.text
+end
 
   name = []
 page.css('h2.a-size-medium').each do |line|
@@ -22,7 +26,7 @@ end
   
  # Write data to CSV file
     CSV.open("amazon_listings.csv", "w") do |file|
-      file << ["Listing Name", "Price"]
+      file << ["Name", "Price"]
       name.length.times do |i|
         file << [name[i], price[i]]
       end
