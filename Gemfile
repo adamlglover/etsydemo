@@ -1,14 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
-
-gem 'ads-rails', '~> 0.2.0'
-
 gem 'rails', '4.1.0'
 
 gem 'sass-rails', '~> 4.0.3'
-
-gem 'bootstrap-sass'
 
 gem 'uglifier', '>= 1.3.0'
 
