@@ -29,6 +29,8 @@
   <% end %>
   </div>   
 
+<%= link_to (image_tag "favicon.ico"), pages_about_path %>
+
  <%= form_tag import_listings_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import CSV" %>   
