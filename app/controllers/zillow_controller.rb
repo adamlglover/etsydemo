@@ -8,3 +8,4 @@ page = Nokogiri::HTML(open(url))
 url = []
 url << line['href']
 end
+end
