@@ -17,19 +17,22 @@
      <div class="col-md-12"><%= link_to listing.name, listing %></div>
      <div class="col-md-8"><%= listing.user.name %></div>
      <div class="col-md-4"><%= number_to_currency(listing.price) %></div>
+<% if user_signed_in?  %>   
+  <%= link_to (image_tag "favicon.ico"), pages_about_path %>
+     <% end %>
      </div>
     
      
-     <% if user_signed_in?  %>   
-     
-     <% end %>
+    
    </div>
     </div>
  
   <% end %>
-  </div>   
+  </div> 
+   
+  
 
-<%= link_to (image_tag "favicon.ico"), pages_about_path %>
+  <%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
 
  <%= form_tag import_listings_path, multipart: true do %>
   <%= file_field_tag :file %>
