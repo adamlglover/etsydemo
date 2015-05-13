@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gems being tested:
 
-Things you may want to cover:
+* carrierwave-dropbox
 
-* Ruby version
+* figaro
 
-* System dependencies
+* mini_magik
 
-* Configuration
+* Devise
 
-* Database creation
+* will_paginate
 
-* Database initialization
+* stripe
 
-* How to run the test suite
+* mandrill
 
-* Services (job queues, cache servers, search engines, etc.)
+* elasticsearch
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
