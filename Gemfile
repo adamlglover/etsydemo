@@ -31,6 +31,8 @@ gem 'will_paginate', '~> 3.0.7'
 
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 group :production do
 
 gem 'pg'
