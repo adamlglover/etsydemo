@@ -9,4 +9,10 @@ class User < ActiveRecord::Base
   has_many :listings, dependent: :destroy 
   has_many :sales, class_name: "Order", foreign_key: "seller_id"
   has_many :purchases, class_name: "Order", foreign_key: "buyer_id"
+  
+   after_create :send_notification
+  def send_notification
+  AdminMailer.new_user(self).deliver
+  end
+  
 end
