@@ -27,6 +27,8 @@ gem "mini_magick"
 
 gem 'devise'
 
+gem 'social-share-button'
+
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

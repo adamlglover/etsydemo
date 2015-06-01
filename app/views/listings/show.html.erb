@@ -2,8 +2,9 @@
   <div class="col-md-4">
   <div class="thumbnail">
     <%= image_tag @listing.image_url%>
-    </div>
-    </div>
+  </div>
+    <%= social_share_button_tag(@listing.price) %> 
+  </div>
 
   <div class="col-md-4">
     <h3><%= @listing.name %></h3>
@@ -13,7 +14,9 @@
     <div class="center">
       <%= link_to "Buy It Now", new_listing_order_path(@listing), class: "btn btn-success", data: { no_turbolink: true } %>
     </div>
+   
     
+   
   </div>
 </div>
 <% if user_signed_in? %>
