@@ -34,6 +34,8 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'mandrill-api', '~> 1.0.53', require: "mandrill"
+
+gem 'popupoverlay-rails'
 group :production do
 
 gem 'pg'

@@ -19,8 +19,37 @@
      <div class="col-md-8"><%= listing.user.name %></div>
      <div class="col-md-4"><%= number_to_currency(listing.price) %></div>
 <% if user_signed_in?  %>   
-  <%= link_to (image_tag "favicon.ico"), pages_about_path %>
+ 
+     
+     
+<div class="col-md-12">
+     <script>
+$(document).ready(function() {
+      // Initialize the plugin
+      $('#my_popup').popup();
+
+    });
+</script>
+  
+  <!-- Add an optional button to open the popup -->
+  <button class="my_popup_open"><%= link_to (image_tag "favicon.ico") %></button>
+
+  <!-- Add content to the popup -->
+  <div id="my_popup">
+    <form>
+First name:<br>
+<input type="text" name="firstname">
+<br>
+Last name:<br>
+<input type="text" name="lastname">
+</form>
+
+  </div>
+
      <% end %> 
+</div>
+     
+     
      </div>
     
      
