@@ -10,8 +10,10 @@ class AdminMailer < ActionMailer::Base
     @user = user
     mail(to: @user.email, subject: "New User: #{user.email}")
   end
+  
+  
   # Sends updates for new listing items
-  #The problem is that you have to use rails console to first identify a listing then send that listing using Admin Mailer
+  #The problem is that you have to use rails console to first identify the listing you want to "advertise" in an email then send that listing using Admin Mailer
   #rails c code follows:
   # listing = Listing.first
   # AdminMailer.new_listing(listing)

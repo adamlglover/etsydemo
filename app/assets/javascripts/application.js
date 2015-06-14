@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require social-share-button
-//= require jquery.popupoverlay
+//= require popupoverlay
 //= require turbolinks
 
 

@@ -1,4 +1,9 @@
-
+<script>
+    $(document).ready(function() {
+      // Initialize the plugin
+      $('#my_popup').popup();
+    });
+</script>
 <div class="jumbotron">
   <center><h1>Welcome to my site</h1></center>
  
@@ -12,56 +17,41 @@
    <div class="thumbnail">
     <div class="thumbnail">
    <%= link_to image_tag(listing.image_url(:thumb)), listing %>
-   </div>
+    </div>
    <div class="row">
   
-     <div class="col-md-12"><%= link_to listing.name, listing %></div>
-     <div class="col-md-8"><%= listing.user.name %></div>
-     <div class="col-md-4"><%= number_to_currency(listing.price) %></div>
-<% if user_signed_in?  %>   
- 
-     
-     
-<div class="col-md-12">
-     <script>
-$(document).ready(function() {
-      // Initialize the plugin
-      $('#my_popup').popup();
-
-    });
-</script>
+      <div class="col-md-12"><%= link_to listing.name, listing %></div>
+      <div class="col-md-8"><%= listing.user.name %></div>
+      <div class="col-md-4"><%= number_to_currency(listing.price) %></div>
+<% if user_signed_in?  %>
+      
+   <div class="col-md-12">   <!--  popup form -->    
   
   <!-- Add an optional button to open the popup -->
-  <button class="my_popup_open"><%= link_to (image_tag "favicon.ico") %></button>
+        <button class="my_popup_open"><%= link_to (image_tag "favicon.ico") %></button>
 
   <!-- Add content to the popup -->
-  <div id="my_popup">
-    <form>
-First name:<br>
-<input type="text" name="firstname">
-<br>
-Last name:<br>
-<input type="text" name="lastname">
-</form>
-
-  </div>
-
-     <% end %> 
-</div>
-     
-     
-     </div>
+          <div id="my_popup" class="well" >
+            <h4>Flag innapropriate behavior</h4>
+              <form>
+                First name:<br>
+                <input type="text" name="firstname">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname">
+              </form>
+          </div>
+     </div>  <!-- popup form -->      
+<% end %>
     
-     
-    
+    </div> 
    </div>
-    </div>
- 
+  </div> <!-- col-sm-3 -->
   <% end %>
-  </div> 
+  </div> <!-- main row div -->
  
  
-   <%= form_tag import_listings_path, multipart: true do %>
+  <%= form_tag import_listings_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import CSV" %>   
   <% end %> 
