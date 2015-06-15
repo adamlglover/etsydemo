@@ -1,3 +1,9 @@
+<script>
+$(document).ready(function() {
+  $('#my_popup').popup();
+});
+</script>
+
 <div class="row">
   <div class="col-md-4">
   <div class="thumbnail">
@@ -6,19 +12,44 @@
     <%= social_share_button_tag(@listing.price) %>
   </div>
 
+  
   <div class="col-md-4">
+    <hr>
     <h3><%= @listing.name %></h3>
     <h3><%= number_to_currency(@listing.price) %></h3>
  <p><%= @listing.description %></p>
-    <br />
+    <hr>
     <div class="center">
       <%= link_to "Buy It Now", new_listing_order_path(@listing), class: "btn btn-success", data: { no_turbolink: true } %>
-    </div>
-   
-    
-   
-  </div>
-</div>
+<% if user_signed_in? %>     
+<!-- Flag Listing Popup section --> 
+
+<button class="my_popup_open"><%= link_to (image_tag "favicon.ico") %></button>
+
+
+<div id="my_popup" class="well" style="max-width:44em;">
+  <h4>Flag inappropriate listing</h4>
+    <form method="post" action="mailto:adamlglover85@gmail.com" >
+      <p> What is the nature of the report? </p>
+        <ul>
+          <li> Spam or misleading </li>
+          <li> Sexual Content </li>
+          <li> Child Abuse </li>
+        </ul>
+<input type="submit" value="Send Email" /> 
+    </form>
+</div>      
+ <% end %>   
+    </div>   <!-- div line 22 --> 
+  
+  </div> <!-- div line 16 -->
+  <div class="col-md-4">
+
+  </div> <!-- div line 42 -->
+  
+</div> <!-- div line 7 -->
+
+
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_listing_path(@listing), class:'btn btn-link' %> 
 |
