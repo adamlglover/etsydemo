@@ -18,3 +18,5 @@ Gems being tested:
 
 * elasticsearch
 
+* rails_admin
+
