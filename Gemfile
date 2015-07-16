@@ -28,8 +28,8 @@ gem "mini_magick"
 gem 'devise'
 
 gem 'social-share-button'
-
-gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git'
+gem 'will_paginate-bootstrap'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
@@ -38,6 +38,8 @@ gem 'mandrill-api', '~> 1.0.53', require: "mandrill"
 gem 'popupoverlay-rails'
 
 gem 'simple_form'
+
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 group :production do
 
 gem 'pg'

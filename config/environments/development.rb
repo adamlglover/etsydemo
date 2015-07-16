@@ -33,7 +33,7 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Required for devise users login
-  config.action_mailer.default_url_options = { host: 'sporty-rascal-22-160560.use1.nitrousbox.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'ruby-on-rails-113242.nitrousapp.com:3000', port: 3000 }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
