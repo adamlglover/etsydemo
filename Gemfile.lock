@@ -189,6 +189,11 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    smart_listing (1.1.2)
+      coffee-rails
+      jquery-rails
+      kaminari (~> 0.16.1)
+      rails (>= 3.2)
     social-share-button (0.1.8)
       coffee-rails
       sass-rails
@@ -246,6 +251,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc
   simple_form
+  smart_listing
   social-share-button
   sqlite3
   stripe!

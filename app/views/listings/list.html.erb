@@ -1,0 +1,12 @@
+<% @listings.each do |listing| %>
+      <tr>
+        <td>
+          <%= listing.name %>
+        </td>
+        <td>
+          <%= listing.price %>
+        </td>
+      </tr>
+      
+<% end %>  
+<%= paginate @listings %>

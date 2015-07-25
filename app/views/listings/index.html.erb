@@ -23,6 +23,8 @@
       <div class="col-md-12"><%= link_to listing.name, listing %></div>
       <div class="col-md-8"><%= listing.user.name %></div>
       <div class="col-md-4"><%= number_to_currency(listing.price) %></div>
+
+       
 <% if user_signed_in?  %>
 
 <% end %>
@@ -32,14 +34,17 @@
   </div> <!-- col-sm-3 -->
   <% end %>
   </div> <!-- main row div -->
- 
+
+
  
   <%= form_tag import_listings_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import CSV" %>   
   <% end %> 
 
-  <%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
+
+
+
 
 
  

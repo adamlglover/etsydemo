@@ -40,6 +40,8 @@ gem 'popupoverlay-rails'
 gem 'simple_form'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
+gem "smart_listing"
 group :production do
 
 gem 'pg'

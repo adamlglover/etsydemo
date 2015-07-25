@@ -71,6 +71,8 @@ Rails.application.routes.draw do
   
   get 'seller' => "listings#seller"
   
+  get 'list' => "listings#list"
+  
   get 'sales' => "orders#sales"
   
   get 'purchases' => "orders#purchases"

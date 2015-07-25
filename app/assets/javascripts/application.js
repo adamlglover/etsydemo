@@ -16,6 +16,7 @@
 //= require_tree .
 //= require social-share-button
 //= require popupoverlay
+//= require smart_listing
 //= require turbolinks
 
 
