@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
 include SmartListing::Helper::ControllerExtensions
-helper  SmartListing::Helper
+  helper  SmartListing::Helper
   def seller
     @listings = Listing.where(user: current_user).order("created_at DESC")
     
@@ -15,7 +15,9 @@ helper  SmartListing::Helper
   # GET /listings.json
   def index
     #@listings = Listing.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
-    @listings = smart_listing_create(:listings, Listing.all, partial: "listings/list" )
+    listings_scope = Listing.order("created_at DESC")
+    listings_scope = listings_scope(params[:filter]) if params[:filter]
+    @listings = smart_listing_create(:listings, listings_scope, partial: "listings/list" )
   end
 
   # GET /listings/1
