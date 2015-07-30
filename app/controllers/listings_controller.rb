@@ -16,7 +16,7 @@ include SmartListing::Helper::ControllerExtensions
   def index
     #@listings = Listing.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
     listings_scope = Listing.order("created_at DESC")
-    listings_scope = listings_scope(params[:filter]) if params[:filter]
+    listings_scope = listings_scope.like(params[:filter]) if params[:filter]
     @listings = smart_listing_create(:listings, listings_scope, partial: "listings/list" )
   end
 

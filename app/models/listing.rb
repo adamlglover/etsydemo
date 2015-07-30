@@ -13,7 +13,7 @@
 #
 
 class Listing < ActiveRecord::Base
- 
+  scope :like, ->(args) { where("price like '%#{args}%' OR name like '%#{args}%'")}
   def self.import(file)
   CSV.foreach(file.path, headers: true) do |row|
     Listing.create! row.to_hash
